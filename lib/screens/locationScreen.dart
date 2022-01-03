@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:clima/services/networking.dart';
 
 class LocationScreen extends StatefulWidget {
-  const LocationScreen({Key? key}) : super(key: key);
+  final NetworkHelper weatherData;
+  LocationScreen(this.weatherData);
 
   @override
   _LocationScreenState createState() => _LocationScreenState();
@@ -9,7 +11,18 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Image(
+          image: AssetImage("images/weatherImage.svg"),
+        ) ,
+      ),
+    );
   }
 }
