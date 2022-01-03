@@ -13,7 +13,7 @@ class NetworkHelper {
   Future getData() async {
     try {
       Uri url = Uri.parse(
-          'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=bc12083e70d2d22298c2df1cec7101d9');
+          'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=bc12083e70d2d22298c2df1cec7101d9&unit=metric');
 
       response = await http.get(url);
       if (response?.statusCode == 200) {

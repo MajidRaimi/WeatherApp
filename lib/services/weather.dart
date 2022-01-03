@@ -1,0 +1,8 @@
+class WeatherModel {
+  void getLocationWeather(){
+
+  }
+
+
+
+}
