@@ -9,8 +9,7 @@ class CityScreen extends StatefulWidget {
 }
 
 class _CityScreenState extends State<CityScreen> {
-
-  final _value = TextEditingController() ;
+  final _value = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +31,18 @@ class _CityScreenState extends State<CityScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding:  EdgeInsets.symmetric(horizontal: 50),
               child: Container(
                 height: 50,
-                child: const TextField(
+                child:  TextField(
+                  onChanged: (text){
+                    print(text) ;
+                  },
                   decoration: kBorderTheme,
-
-                  controller: _value,
-
                 ),
               ),
             ),
+
             const Text(
               "Get Weather",
               style: TextStyle(color: Colors.teal, fontSize: 28),

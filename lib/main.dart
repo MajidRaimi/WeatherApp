@@ -14,7 +14,6 @@ void main() {
       routes: {
         '/CityScreen': (context) => const CityScreen(),
         '/LoadingScreen': (context) => const LoadingScreen(),
-
       },
     ),
   );
