@@ -11,6 +11,8 @@ class CityScreen extends StatefulWidget {
 class _CityScreenState extends State<CityScreen> {
   final _value = TextEditingController();
 
+  String cityName = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,26 +30,44 @@ class _CityScreenState extends State<CityScreen> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 50),
-              child: Container(
-                height: 50,
-                child:  TextField(
-                  onChanged: (text){
-                    print(text) ;
-                  },
-                  decoration: kBorderTheme,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 50),
+                child: Container(
+                  height: 50,
+                  child: TextField(
+                    onChanged: (text) {
+                      cityName = text;
+                    },
+                    decoration: kBorderTheme,
+                  ),
                 ),
               ),
-            ),
-
-            const Text(
-              "Get Weather",
-              style: TextStyle(color: Colors.teal, fontSize: 28),
-            ),
-          ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context , cityName) ;
+                },
+                child: Container(
+                  width: 200,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(30) ,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Get Weather",
+                      style: TextStyle(color: Colors.white, fontSize: 26 , fontFamily: "Pacifico" ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

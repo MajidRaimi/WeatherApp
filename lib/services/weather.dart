@@ -1,8 +1,8 @@
 class WeatherModel {
-  void getLocationWeather(){
+  WeatherModel(this.cityName) ;
+  final String cityName ;
+
+  void getCityWeather() {
 
   }
-
-
-
 }
